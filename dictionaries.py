@@ -18,7 +18,7 @@ definitions3 = dict([("chicken","TO LOSE ONE'S NERVE"),
 print(definitions)
 print(definitions["cow"])
 
-definition_word_len = { word: len(word) for word in definitions }
+definition_word_len = { word: len(word) for word in definitions if word[0] == "c" }
 
 print(definition_word_len)
 
@@ -43,6 +43,14 @@ except:
 for word, definition in definitions.items():
   print('{}: {}'.format(word, definition))
 
-def_keys = [ definitions.keys() ]
+def_keys = [ key for key in definitions.keys() ]
+#This is not the same:
+def_keys2 = [ definitions.keys() ]
+
+def_keys2 = []
+for key in definitions.keys():
+  def_keys2.append(key)
+
 
 def_values = list(definitions.values())
+print("That's all folks")
